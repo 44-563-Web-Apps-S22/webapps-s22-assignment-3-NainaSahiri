@@ -74,5 +74,23 @@
                     <td>$100</td>
                 </tr>
         </table>
+        <hr>
+        <h3>Segrment Tree</h3>
+       <blockquote>
+            In computer science, a segment tree, also known as a statistic tree, is a tree data structure used for storing information about intervals, or segments. It allows querying which of the stored segments contain a given point. It is, in principle, a static structure; that is, it's a structure that cannot be modified once it's built. A similar data structure is the interval tree.
+        <a href="https://en.wikipedia.org/wiki/Segment_tree">Source Link</a>
+        </blockquote>
+        <pre>
+            void build(int a[], int v, int tl, int tr) {
+                if (tl == tr) {
+                    t[v] = a[tl];
+                } else {
+                    int tm = (tl + tr) / 2;
+                    build(a, v*2, tl, tm);
+                    build(a, v*2+1, tm+1, tr);
+                    t[v] = t[v*2] + t[v*2+1];
+                }
+            }
+        </pre>
     </body>
 </html>
